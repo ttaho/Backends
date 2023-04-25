@@ -10,6 +10,14 @@ import java.util.List;
 @Controller
 @RequestMapping("/springmvc/v3/members")
 public class SpringMemberControllerV3 {
+
+    /**
+     * v3
+     * Model 도입
+     * ViewName 직접 반환
+     * @RequestParam 사용
+     * @RequestMapping -> @GetMapping, @PostMapping
+     */
     private MemberRepository memberRepository = MemberRepository.getInstance();
 
     @GetMapping("/new-form")
