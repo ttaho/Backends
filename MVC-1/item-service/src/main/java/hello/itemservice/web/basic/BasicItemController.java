@@ -58,7 +58,7 @@ public class BasicItemController {
         return "basic/item";
     }
 
-    @PostMapping("/add")
+//    @PostMapping("/add")
     public String addItemV2(@ModelAttribute("item") Item item) {
 
         itemRepository.save(item);
@@ -66,6 +66,14 @@ public class BasicItemController {
 
         return "basic/item";
     }
+    //PRG 적용
+    @PostMapping("/add")
+    public String addItemV3(@ModelAttribute("item") Item item) {
+
+        itemRepository.save(item);
+        return "redirect:/basic/items/" + item.getId();
+    }
+    
 
     @GetMapping("/{itemId}/edit")
     public String editForm(@PathVariable Long itemId, Model model) {
